@@ -322,3 +322,45 @@ header{
         left: 70%;
     }
 }
+
+@media(max-width: 657px){
+    .container{
+        width: 90%;
+    }
+    .team__item{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .format__item{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media(min-width:370px) and (max-width: 650px){
+    .container{
+        width: 360px;
+    }
+    .team__list, .format__list{
+        display: flex;
+        flex-direction: column;
+    }
+    .hero__text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .hero__header{
+        font-size: 45px;
+    }
+    .hero__description{
+        font-size: 18px;
+    }
+    .h2__header{
+        font-size: 32px;
+    }
+    .btn{
+        font-size: 16px;
+    }
+}
