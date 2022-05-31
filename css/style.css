@@ -285,7 +285,7 @@ header{
 }
 
 /*MEDIA*/
-@media screen and (max-width: 1040px){
+@media(max-width: 1040px){
     .container{
         width: 700px;
     }
@@ -311,7 +311,7 @@ header{
     }
 }
 
-@media screen and (max-width: 755px){
+@media(max-width: 755px){
     .container{
         width: 600px;
     }
