@@ -343,6 +343,7 @@ header{
     }
     .container{
         width: 360px;
+        overflow:hidden;
     }
     .team__list, .format__list{
         display: flex;
