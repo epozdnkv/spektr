@@ -463,6 +463,9 @@ header{
     .team__img{
         width: 120px;
     }
+        .format__item{
+        border: 0.5px solid var(--blue);
+    }
 
 /*копирование с сайта*/
     .menu-button-container {
