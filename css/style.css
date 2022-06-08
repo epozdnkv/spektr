@@ -96,6 +96,10 @@ a{
     box-shadow: 0px 7px 5px -5px rgba(34, 60, 80, 0.4);
 }
 
+.mobmap{
+    display: none;
+}
+
 /*MENU*/
 
 header{
@@ -311,6 +315,70 @@ header{
     }
 }
 
+/*меню, копирование с сайта*/
+.top-nav {
+    display: none;
+  }
+  
+  .mmenu {
+    display: flex;
+  }
+  
+  .mmenu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+  }
+  
+  .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: var(--blue);
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+  
+  .menu-button::before {
+    content: '';
+    margin-top: -8px;
+  }
+  
+  .menu-button::after {
+    content: '';
+    margin-top: 8px;
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: var(--white);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+
 @media(max-width: 755px){
     .container{
         width: 600px;
@@ -319,7 +387,7 @@ header{
         grid-template-columns: repeat(2, 1fr);
     }
     .hero__img{
-        left: 70%;
+        display: none;
     }
 }
 
@@ -337,17 +405,17 @@ header{
     }
 }
 
-@media(min-width:370px) and (max-width: 650px){
-    body{
-        overflow: hidden;
-    }
+@media(min-width:320px) and (max-width: 656px){
     .container{
-        width: 360px;
-        overflow:hidden;
+        width: 90%;
     }
     .team__list, .format__list{
         display: flex;
         flex-direction: column;
+        align-items: center;
+    }
+    .format__item{
+        width: 300px;
     }
     .hero__text{
         display: flex;
@@ -356,15 +424,101 @@ header{
         text-align: center;
     }
     .hero__header{
-        font-size: 45px;
+        font-size: 30px;
     }
     .hero__description{
-        font-size: 18px;
+        font-size: 16px;
     }
     .h2__header{
-        font-size: 32px;
+        font-size: 25px;
+        margin-bottom: 40px;
     }
     .btn{
         font-size: 16px;
+        text-align: center;
+        padding: 10px 20px;
     }
+    .skills__list{
+        font-size: 16px;
+        line-height: 170%;
+        margin-bottom: 40px;
+    }
+    .hero{
+        margin-top: 100px;
+    }
+
+    .hero__header, .hero__description{
+        width: 280px;
+    }
+
+    .container__menu{
+        display: none;
+    }
+    .team__name, .contact__h{
+        font-size: 18px;
+    }
+    .team__desc, .contact__desc{
+        font-size: 14px;
+    }
+    .team__img{
+        width: 120px;
+    }
+
+/*копирование с сайта*/
+    .menu-button-container {
+        display: flex;
+      }
+      .mmenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-top: 80px;
+        width: 100%;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #menu-toggle ~ .mmenu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      #menu-toggle:checked ~ .mmenu li {
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .mmenu > li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        background-color: var(--white);
+      }
+      .logo{
+          margin: 0;
+          padding: 0;
+      }
+      .top-nav{
+          margin: 0;
+          display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        height: 80px;
+        padding: 1em;
+        width: 100%;
+      }
+      .map{
+          display: none;
+      }
+      .mobmap{
+          display: block;
+      }
+      
 }
